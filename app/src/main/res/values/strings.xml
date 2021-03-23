@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Scaler</string>
+    <string name="in_min_label">In min</string>
+    <string name="in_max_label">In max</string>
+    <string name="out_min_label">Out min</string>
+    <string name="out_max_label">Out max</string>
+    <string name="input_label">Input:</string>
+    <string name="output_label">Output:</string>
+    <string name="input_value_label">Input value</string>
+    <string name="arrow">→</string>
 </resources>

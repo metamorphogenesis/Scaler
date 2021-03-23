@@ -4,189 +4,245 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusableInTouchMode="true"
     android:clickable="true"
-    android:focusable="true"
+    android:focusable="auto"
+    android:focusableInTouchMode="true"
     android:windowSoftInputMode="stateAlwaysHidden"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/outMaxField"
-        android:layout_width="111dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:hint="type Out max"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="100"
-        android:textColor="@color/outputColor"
-        android:textColorHint="@color/errorColor"
-        app:layout_constraintBottom_toBottomOf="@+id/inMaxField"
-        app:layout_constraintEnd_toEndOf="@+id/outMinField"
-        app:layout_constraintStart_toStartOf="@+id/outMinField"
-        app:layout_constraintTop_toTopOf="@+id/inMaxField" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inMinLayout"
+        android:layout_width="120dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputValueLayout"
+        app:layout_constraintEnd_toEndOf="@+id/inputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayout">
 
-    <EditText
-        android:id="@+id/outMinField"
-        android:layout_width="111dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:hint="type Out min"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="0"
-        android:textColor="@color/outputColor"
-        android:textColorHint="@color/errorColor"
-        app:layout_constraintBottom_toBottomOf="@+id/inMinField"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/arrowLabel"
-        app:layout_constraintTop_toTopOf="@+id/inMinField" />
+        <TextView
+            android:id="@+id/inMinLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/in_min_label"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/outMinLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Out min:"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/inMinLabel"
-        app:layout_constraintStart_toStartOf="@+id/outMinField"
-        app:layout_constraintTop_toTopOf="@+id/inMinLabel" />
+        <EditText
+            android:id="@+id/inMinField"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:hint="type In min"
+            android:inputType="numberSigned"
+            android:text="0"
+            android:textColor="@color/inputColor"
+            android:textColorHint="@color/errorColor"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-    <TextView
-        android:id="@+id/outMaxLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Out max:"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/inMaxLabel"
-        app:layout_constraintStart_toStartOf="@+id/outMaxField"
-        app:layout_constraintTop_toTopOf="@+id/inMaxLabel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <EditText
-        android:id="@+id/inMaxField"
-        android:layout_width="111dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="type In max"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="1"
-        android:textColor="@color/inputColor"
-        android:textColorHint="@color/errorColor"
-        app:layout_constraintStart_toStartOf="@+id/inMaxLabel"
-        app:layout_constraintTop_toBottomOf="@+id/inMaxLabel" />
-
-    <TextView
-        android:id="@+id/inMaxLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif"
-        android:text="In max:"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/inMinLabel"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/inputValueLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif"
-        android:text="Input value"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/inputValueBar"
-        app:layout_constraintStart_toStartOf="@+id/inputValueBar" />
-
-    <TextView
-        android:id="@+id/inMinLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif"
-        android:text="In min:"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/inMinField"
-        app:layout_constraintStart_toStartOf="@+id/inMinField" />
-
-    <TextView
-        android:id="@+id/inputLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif"
-        android:text="Input:"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/inputText"
-        app:layout_constraintEnd_toEndOf="@+id/inputText" />
-
-    <TextView
-        android:id="@+id/outputLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Output:"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/inputLabel"
-        app:layout_constraintStart_toStartOf="@+id/outputText"
-        app:layout_constraintTop_toTopOf="@+id/inputLabel" />
-
-    <EditText
-        android:id="@+id/inMinField"
-        android:layout_width="111dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:hint="type In min"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="0"
-        android:textColor="@color/inputColor"
-        android:textColorHint="@color/errorColor"
-        app:layout_constraintBottom_toTopOf="@+id/inputValueBar"
-        app:layout_constraintEnd_toStartOf="@+id/arrowLabel"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <SeekBar
-        android:id="@+id/inputValueBar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inMaxLayout"
         android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:layout_marginBottom="10dp"
-        android:max="1000"
-        app:layout_constraintBottom_toTopOf="@+id/inputValueLabel"
-        app:layout_constraintEnd_toEndOf="@+id/outMinField"
-        app:layout_constraintStart_toStartOf="@+id/inMinField" />
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputLayout"
+        app:layout_constraintEnd_toEndOf="@+id/inMinLayout"
+        app:layout_constraintStart_toStartOf="@+id/inMinLayout"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/inputText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/inputColor"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/inMinField"
-        app:layout_constraintEnd_toEndOf="@+id/inMinField"
-        app:layout_constraintTop_toBottomOf="@+id/inMaxField" />
+        <TextView
+            android:id="@+id/inMaxLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/in_max_label"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/inMaxField"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:hint="type In max"
+            android:inputType="numberSigned"
+            android:text="1"
+            android:textColor="@color/inputColor"
+            android:textColorHint="@color/errorColor"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/outMinLayout"
+        android:layout_width="120dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/inMinLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/outputLayout"
+        app:layout_constraintTop_toTopOf="@+id/inMinLayout">
+
+        <TextView
+            android:id="@+id/outMinLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/out_min_label"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/outMinField"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:hint="type Out min"
+            android:inputType="numberSigned"
+            android:text="0"
+            android:textColor="@color/outputColor"
+            android:textColorHint="@color/errorColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/outMaxLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/inMaxLayout"
+        app:layout_constraintEnd_toEndOf="@+id/outMinLayout"
+        app:layout_constraintStart_toStartOf="@+id/outMinLayout"
+        app:layout_constraintTop_toTopOf="@+id/inMaxLayout">
+
+        <TextView
+            android:id="@+id/outMaxLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/out_max_label"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/outMaxField"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:hint="type Out max"
+            android:inputType="numberSigned"
+            android:text="100"
+            android:textColor="@color/outputColor"
+            android:textColorHint="@color/errorColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="199dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/arrowLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="46dp"
+        android:layout_height="52dp"
         android:text="→"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="@+id/inputText"
+        app:layout_constraintBottom_toBottomOf="@+id/inputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/outputText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/outputColor"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/inputText"
-        app:layout_constraintStart_toStartOf="@+id/outMinField"
-        app:layout_constraintTop_toTopOf="@+id/inputText" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="140dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputValueLayout"
+        app:layout_constraintEnd_toStartOf="@+id/arrowLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/inputLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/input_label"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/inputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/inputColor"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/outputLayout"
+        android:layout_width="140dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/inputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/arrowLabel">
+
+        <TextView
+            android:id="@+id/outputLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/output_label"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/outputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/outputColor"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inputValueLayout"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <SeekBar
+            android:id="@+id/inputValueBar"
+            android:layout_width="0dp"
+            android:layout_height="27dp"
+            android:progressTint="@color/inputColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/inputValueLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/input_value_label"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
