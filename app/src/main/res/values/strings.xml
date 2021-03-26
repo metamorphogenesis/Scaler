@@ -8,4 +8,5 @@
     <string name="output_label">Output:</string>
     <string name="input_value_label">Input value</string>
     <string name="arrow">→</string>
+    <string name="expand_input_range">Please expand input range.</string>
 </resources>
